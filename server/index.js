@@ -11,7 +11,7 @@ import path from 'path';
 const app = express();
 const port = process.env.PORT || 3001;
 app.use(cors({
-        origin: ['https://creativa.onrender.com', 'http://localhost:5173'],
+        origin: ['https://creativa.onrender.com', 'http://localhost:5173','http://localhost:3001'],
       credentials: true, //access-control-allow-credentials:true
       optionSuccessStatus: 200,
     }));
