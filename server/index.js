@@ -6,11 +6,14 @@ import csvParser from "csv-parser";
 import * as statistics from "simple-statistics";
 import lo from "lodash";
 import { ChartJSNodeCanvas } from "chartjs-node-canvas";
+import path from 'path';
 
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname,'/client/my-project/dist')));
 const upload = multer({ dest: "uploads/" });
 
 app.post("/upload", upload.single("csvFile"), (req, res) => {
