@@ -12,14 +12,14 @@ import path from 'path';
 const app = express();
 const port =  3001;
 app.use(cors({
-        origin: ['https://demo-0zsz.onrender.com'],
+        origin: 'https://backend-8fks.onrender.com',
       credentials: true, //access-control-allow-credentials:true
       optionSuccessStatus: 200,
     }));
 dotenv.config();
 app.use(express.json());
 const _dirname = path.resolve();
-app.use(express.static(path.join(_dirname,'/client/my-project/dist')));
+app.use(express.static(path.join(_dirname,'/client/my-project/')));
 const upload = multer({ dest: "uploads/" });
 
 app.post("/upload", upload.single("csvFile"), (req, res) => {
