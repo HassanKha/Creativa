@@ -2,6 +2,7 @@ import express from "express";
 import multer from "multer";
 import cors from "cors";
 import fs from "fs";
+import dotenv from "dotenv";
 import csvParser from "csv-parser";
 import * as statistics from "simple-statistics";
 import lo from "lodash";
@@ -15,6 +16,7 @@ app.use(cors({
       credentials: true, //access-control-allow-credentials:true
       optionSuccessStatus: 200,
     }));
+dotenv.config();
 app.use(express.json());
 const _dirname = path.resolve();
 app.use(express.static(path.join(_dirname,'/client/my-project/dist')));
