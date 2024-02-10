@@ -23,7 +23,7 @@ function UploadForm() {
     formData.append("csvFile", file);
     console.log(formData);
     try {
-      const response = await fetch.post(
+       const response = await fetch.post(
         "/upload",
         formData,
         {
@@ -32,6 +32,7 @@ function UploadForm() {
           },
         }
       );
+ 
 console.log(response.data.image);
       const ImageButtering = response.data.image;
 console.log(response.data.image);
