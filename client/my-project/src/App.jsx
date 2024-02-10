@@ -3,7 +3,7 @@ import './App.css'
 import UploadForm from './UploadForm'
 import axios from 'axios'
 function App() {
-  axios.defaults.baseURL = 'http://localhost:3001'
+  axios.defaults.baseURL = 'https://creativa.onrender.com/upload'
   axios.defaults.withCredentials = true;
 
   return (
