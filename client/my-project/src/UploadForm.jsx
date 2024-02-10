@@ -24,7 +24,7 @@ function UploadForm() {
     console.log(formData);
     try {
       const response = await axios.post(
-        "/upload",
+        "https://backend-8fks.onrender.com/upload",
         formData,
         {
           headers: {
