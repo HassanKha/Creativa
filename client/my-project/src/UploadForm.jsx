@@ -24,7 +24,7 @@ function UploadForm() {
     console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:3000/upload",
+        "/upload",
         formData,
         {
           headers: {
