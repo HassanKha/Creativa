@@ -9,6 +9,7 @@ import { ChartJSNodeCanvas } from "chartjs-node-canvas";
 import path from 'path';
 
 const app = express();
+const _dirname = path.resolve();
 const port =  3001;
 app.use(cors({
         origin: 'https://backend-8fks.onrender.com',
@@ -17,8 +18,11 @@ app.use(cors({
     }));
 
 app.use(express.json());
-const _dirname = path.resolve();
+
 app.use(express.static(path.join(_dirname,'/client/my-project/dist')));
+app.get(('*',(req,res) => {
+  res.sendFile(path.join(_dirname,'client/my-project','dist','index.html'))
+}))
 const upload = multer({ dest: "uploads/" });
 
 app.post("/upload", upload.single("csvFile"), (req, res) => {
