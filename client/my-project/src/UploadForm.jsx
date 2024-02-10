@@ -23,8 +23,8 @@ function UploadForm() {
     formData.append("csvFile", file);
     console.log(formData);
     try {
-      const response = await axios.post(
-        "https://backend-8fks.onrender.com/upload",
+      const response = await fetch.post(
+        "/upload",
         formData,
         {
           headers: {
