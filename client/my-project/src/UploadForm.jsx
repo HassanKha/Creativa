@@ -32,9 +32,9 @@ function UploadForm() {
           },
         }
       );
-
+console.log(response.data.image);
       const ImageButtering = response.data.image;
-
+console.log(response.data.image);
       setImageSrc(`data:image/png;base64,${ImageButtering}`);
       console.log(response.data.Stats);
       setData(response.data.Stats)
